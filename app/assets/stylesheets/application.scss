@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body {
+    margin-top: 50px;
+  }
+  h2 {
+    padding-top: -75px;
+    margin-top: 75px;
+  }
+  .navbar-brand {
+    font-size: 20px;
+    padding-left: 30px;
+    color: #fff !important;
+  }
+  a.navbar-left img {
+    padding-top: 10px;
+    width:30px;
+  }
+  span.glyphicon {
+    font-size: 3em;
+  }
+  .row > div {
+    padding:20px;
+  }
+  .img-circle {
+    width:200px;
+    height:200px;
+    border: 10px darkgrey solid;
+  }
+  .grey-background {
+    background-color: lightgrey;
+  }
+  input, textarea {
+    max-width: 400px;
+  }
+@media (min-width:768px) {
+.product {
+  height: 300px;
+}
+}

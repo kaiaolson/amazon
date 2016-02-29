@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazon</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- <%#= link_to "All Products", products_path %> | -->
+<!-- <%#= link_to "New Product", new_product_path %> | -->
+<!-- <%# if user_signed_in? %> -->
+  <!-- Welcome <%#= "#{current_user.first_name} #{current_user.last_name}!" %> | -->
+  <%#= link_to "Log Out", sessions_path, method: :delete, data: {confirm: "Are you sure you want to log out?"} %>
+<%# else %>
+  <!-- <%#= link_to "Sign In", new_session_path %> | -->
+  <%#= link_to "Sign Up", new_user_path %>
+<%# end %>
+<%#= notice || alert %>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <a href="#" class="navbar-left"><%= image_tag "logo.png" %></a>
+    <!-- <a href="#" class="navbar-left navbar-brand">Awesome Answers</a> -->
+    <%= link_to "Amazon", root_path, class: "navbar-left navbar-brand" %>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "All Products", products_path %></li>
+      <li><%= link_to "Departments", departments_path %></li>
+      <li><%= link_to "New Product", new_product_path %> </li>
+      <% if user_signed_in? %>
+        <li><a href="">Welcome <%= "#{current_user.first_name} #{current_user.last_name}!" %></a></li>
+        <li><%= link_to "Log Out", sessions_path, method: :delete, data: {confirm: "Are you sure you want to log out?"} %></li>
+      <% else %>
+        <li><%= link_to "Log In", new_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<% if notice %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
+<% if alert %>
+  <div class="alert alert-danger"><%= alert %></div>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+      $('.item').matchHeight();
+  });
+</script>
+</body>
+</html>

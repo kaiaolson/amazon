@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <h1>All Products (<%= @products.count %>)</h1>
+  <div class="row">
+    <% @products.order("id").each do |product| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 item">
+        <h3><%= link_to product.name, product_path(product) %></h2>
+        <p><%= product.description%></p>
+        <p><%= number_to_currency product.price %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

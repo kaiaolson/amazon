@@ -1,0 +1,18 @@
+<%= form_for @product do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.collection_check_boxes(:department_ids, Department.order("name"), :id, :name) %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

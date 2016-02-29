@@ -1,0 +1,7 @@
+<h1><%= @department.name %></h1>
+
+<% @products.order("id").each do |product| %>
+  <h3><%= link_to product.name, product_path(product) %></h2>
+  <p><%= product.description%></p>
+  <p><%= number_to_currency product.price %></p>
+<% end %>

@@ -1,0 +1,7 @@
+<%= review.body %> |
+<%= review.created_at.strftime("%B %d, %Y") %>
+<%#= shortcut for path %>
+<%= link_to "Delete", [@product, review],
+                      method: :delete,
+                      data: {confirm: "Are you sure?"}%>
+<hr>

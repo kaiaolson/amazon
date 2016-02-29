@@ -1,0 +1,9 @@
+<h1>Add a Product</h1>
+
+<ul>
+  <% @product.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
+<%= render "form" %>
